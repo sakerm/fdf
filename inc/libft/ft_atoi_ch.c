@@ -6,7 +6,7 @@
 /*   By: lomeress <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 21:47:06 by lomeress          #+#    #+#             */
-/*   Updated: 2017/01/25 14:35:50 by lomeress         ###   ########.fr       */
+/*   Updated: 2017/01/25 15:07:00 by lomeress         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ int		ft_atoi_ch(char *str)
 		result = result * 10 + str[i];
 		result = result - 48;
 		i++;
-		if (str[i] == '\0' || str[i] == '\n' || str[i] == ' '
-				|| str[i] == ',' || str[i] == 'x')
-			return (result * sign);
 	}
+	if (str[i] == '\0' || str[i] == '\n' || str[i] == ' '
+			|| str[i] == ',' || str[i] == 'x'
+			|| str[i] == '\f' || str[i] == '-')
+		return (result * sign);
 	exit(1);
 }
